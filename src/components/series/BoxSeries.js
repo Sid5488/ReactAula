@@ -35,7 +35,7 @@ class BoxSeries extends Component {
             if(retorno.status === 201) {
                 console.log('enviado com sucesso');
                 serie = await retorno.json()
-                this.setState({serie: [...this.state.series, serie]});
+                this.setState({series: [...this.state.series, serie]});
             }
         } catch(erro) {
             console.log(erro);
@@ -44,9 +44,15 @@ class BoxSeries extends Component {
 
     render() {
         return (
-            <div>
-                <FormularioSeries enviaDados={this.enviaDados} />
-                <TabelaSeries series={this.state.series}/>
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-4">
+                        <FormularioSeries enviaDados={this.enviaDados} />
+                    </div>
+                    <div className="col-md-8">
+                        <TabelaSeries series={this.state.series}/>
+                    </div>
+                </div>
             </div>
         );
     }

@@ -27,21 +27,24 @@ class FormularioSeries extends Component {
 
     render() {
         return (
-            <div>
-                <form method="post" onSubmit={this.enviaDados}>
-                    <div className="form">
-                        <label htmlFor="nome">Nome</label>
-                        <input type="text" id="nome" name="nome" value={this.state.nome} onChange={this.inputHandler}/>
-                        <label htmlFor="lancamento">Ano de Lançamento</label>
-                        <input type="text" id="lancamento" name="lancamento" value={this.state.lancamento} onChange={this.inputHandler}/>
-                        <label htmlFor="temporadas">Temporadas</label>
-                        <input type="text" id="temporadas" name="temporadas" value={this.state.temporadas} onChange={this.inputHandler}/>
-                        <label htmlFor="sinopse">Sinopse</label>
-                        <textarea id="sinopse" name="sinopse" value={this.state.sinopse}
-                            onChange={this.inputHandler}></textarea>
-                        <button type="submit">Salvar</button>
-                    </div>
-                </form>
+            <div className="card text-white bg-dark">
+                <div className="card-header"><b>Cadastro de Séries</b></div>
+                <div className="card-body">
+                    <form method="post" onSubmit={this.enviaDados}>
+                        <div className="form-group">
+                            <label htmlFor="nome">Nome</label>
+                            <input type="text" id="nome" name="nome" value={this.state.nome} onChange={this.inputHandler} className="form-control" />
+                            <label htmlFor="lancamento">Ano de Lançamento</label>
+                            <input type="text" id="lancamento" name="lancamento" value={this.state.lancamento} onChange={this.inputHandler} className="form-control" />
+                            <label htmlFor="temporadas">Temporadas</label>
+                            <input type="text" id="temporadas" name="temporadas" value={this.state.temporadas} onChange={this.inputHandler} className="form-control" />
+                            <label htmlFor="sinopse">Sinopse</label>
+                            <textarea id="sinopse" name="sinopse" value={this.state.sinopse}
+                                onChange={this.inputHandler} className="form-control" ></textarea>
+                            <button type="submit" className="btn btn-success form-control mt-2">Salvar</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         );
     }

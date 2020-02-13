@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 const TabelaHead = () => {
     return (
-        <thead>
+        <thead className="thead-dark">
             <tr>
                 <th>Nome</th>
                 <th>Lançamento</th>
@@ -35,9 +35,10 @@ class TabelaSeries extends Component {
         const { series } = this.props;
 
         return (
-            <div>
-                <div className="list">
-                    <table>
+            <div className="card bg-dark text-white">
+                <div className="card-header">Cadastros</div>
+                <div className="card-body">
+                    <table className="table table-striped text-white">
                         <TabelaHead />
                         <TabelaBody series={series} />
                     </table>
