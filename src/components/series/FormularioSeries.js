@@ -27,7 +27,7 @@ class FormularioSeries extends Component {
 
     render() {
         return (
-            <div className="card text-white bg-dark">
+            <div className="card">
                 <div className="card-header"><b>Cadastro de Séries</b></div>
                 <div className="card-body">
                     <form method="post" onSubmit={this.enviaDados}>
