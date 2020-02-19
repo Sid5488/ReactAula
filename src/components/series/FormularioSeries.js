@@ -3,20 +3,12 @@ import React, { Component } from 'react';
 class FormularioSeries extends Component {
     constructor() {
         super();
-        this.stateInicial = {
-            nome: '',
-            lancamento: '',
-            temporadas: '',
-            sinopse: ''
-        }
-
-        this.state = this.stateInicial;
     }
 
     inputHandler = event => {
         const { name, value } = event.target;
 
-        this.setState({[name]: value});
+        this.inputHandler(name, value);
     }
 
     enviaDados = event => {
@@ -26,6 +18,8 @@ class FormularioSeries extends Component {
     }
 
     render() {
+        const { serie } = this.props;
+
         return (
             <div className="card">
                 <div className="card-header"><b>Cadastro de Séries</b></div>
